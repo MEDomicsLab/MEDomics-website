@@ -65,7 +65,7 @@
     "playwright-core": "1.65.1",
     "prettier": "3.8.1",
     "sharp": "0.35.5",
-    "size-limit": "12.1.0",
+    "size-limit": "14.3.0",
     "tailwindcss": "4.3.5",
     "typescript": "5.9.3"
   },
