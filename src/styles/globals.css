@@ -1,0 +1,1075 @@
+@import 'tailwindcss';
+
+/* ───────────────────────── 1. Tokens ───────────────────────── */
+:root {
+  /* inks */
+  --blue: #0755b5;
+  --ivory: #f4f2e8;
+  --ivory-2: #f5f0e6;
+  --blue-muted: #326daa;
+  /* accents from the MEDomics molecule mark (tiles only) */
+  --acc-green: #2e9e44;
+  --acc-red: #d0383a;
+  --acc-yellow: #c9a40a;
+  --acc-blue: #1f74d1;
+  --acc-orange: #e0581f;
+
+  /* semantic (inverted by .on-blue) */
+  --background: var(--ivory);
+  --foreground: var(--blue);
+  --foreground-inverse: var(--ivory);
+  --foreground-muted: var(--blue-muted);
+  --guide-color: color-mix(in srgb, var(--foreground) 40%, transparent);
+
+  /* space */
+  --gutter: 20px;
+  --space-cell: 1rem;
+  --space-columns: 2rem;
+  --space-text-action: 1.5rem;
+  --space-group: 3rem;
+  --space-section: 4rem;
+  --header-h: 48px;
+
+  /* motion */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-roll: cubic-bezier(0.32, 0, 0.16, 1);
+  --ease-trace: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+  --nav-swap: 0.4s var(--ease);
+}
+@media (min-width: 640px) {
+  :root {
+    --gutter: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  /* the header is a fixed 42px bar (41px + 1px rule) on desktop; it does not scale with type */
+  :root {
+    /* edge-to-edge: side margins are a small share of the screen, never a fixed wide band */
+    --gutter: max(32px, 3.5vw);
+    --space-section: 6rem;
+    --header-h: 2.75rem;
+    /* hero side column: 1/3 at 1024, 480px at 1440, 27vw beyond (≈513px at 1900) */
+    --hero-aside: max(27vw, min(33.333vw, 480px));
+  }
+}
+
+.on-blue,
+html[data-nav-on-blue] .nav-surface {
+  --background: var(--blue);
+  --foreground: var(--ivory);
+  --foreground-inverse: var(--blue);
+  --foreground-muted: color-mix(in srgb, var(--ivory) 85%, var(--blue)); /* ≈4.9:1 on blue */
+  --guide-color: color-mix(in srgb, var(--ivory) 40%, transparent);
+}
+.on-blue .off-blue {
+  --background: var(--ivory);
+  --foreground: var(--blue);
+  --foreground-inverse: var(--ivory);
+  --foreground-muted: var(--blue-muted);
+  --guide-color: color-mix(in srgb, var(--blue) 40%, transparent);
+}
+
+@theme inline {
+  --color-bg: var(--background);
+  --color-fg: var(--foreground);
+  --color-inv: var(--foreground-inverse);
+  --color-muted: var(--foreground-muted);
+  --color-guide: var(--guide-color);
+  --color-blue: var(--blue);
+  --color-ivory: var(--ivory);
+  --color-ivory-2: var(--ivory-2);
+
+  --font-heading: var(--font-heading-face), 'General Sans', Manrope, Arial, sans-serif;
+  --font-body: var(--font-body-face), Inter, Arial, sans-serif;
+  --font-pixel: var(--font-pixel-face), 'Geist Pixel', ui-monospace, monospace;
+  --font-code: var(--font-code-face), 'Geist Mono', ui-monospace, monospace;
+
+  /* modular scale, ratio 1.33 from 15px. All in rem: the root size grows with the viewport
+     (see html below; 20px at 1900px), so at 1900px body is ~18.8px, h3 33, h2 44, display 78 */
+  --text-caption: 0.705rem;
+  --text-control: 0.875rem;
+  --text-control--line-height: 1;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.6;
+  --text-h4: 1.2469rem;
+  --text-h4--line-height: 1.3;
+  --text-h3: clamp(1.3125rem, calc(1rem + 0.75vw), 1.6581rem);
+  --text-h3--line-height: 1.25;
+  --text-h2: clamp(1.6563rem, calc(1.2rem + 1.2vw), 2.2056rem);
+  --text-h2--line-height: 1.15;
+  --text-h1: clamp(1.875rem, calc(1.3rem + 2vw), 2.9338rem);
+  --text-h1--line-height: 1.1;
+  --text-display: clamp(2.125rem, calc(1.5rem + 2.7vw), 3.9013rem);
+  --text-display--line-height: 1.05;
+
+  /* long-form text only (legal pages, FAQ answers): a line-length limit, not a page container */
+  --container-reading: 60rem;
+
+  --ease-roll: var(--ease-roll);
+  --ease-trace: var(--ease-trace);
+  --ease-settle: var(--ease-settle);
+}
+
+/* ───────────────────────── 2. Base ───────────────────────── */
+@layer base {
+  html {
+    /* One fluid scale for type, spacing and components: 16px up to ~1290px wide, then
+       proportional to the viewport (17px at 1440, 20px at 1900, 23px at 2380). Because it
+       tracks the viewport, the page keeps the same proportions when the browser is zoomed. */
+    font-size: clamp(100%, calc(7.6px + 0.652vw), 30px);
+    background: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 80px;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font: 400 var(--text-body) / 1.6 var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-feature-settings: 'ss01';
+  }
+  ::selection {
+    background: var(--foreground);
+    color: var(--foreground-inverse);
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+  img,
+  svg,
+  canvas {
+    display: block;
+  }
+}
+
+/* pixel cursors on fine pointers */
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body {
+    cursor:
+      url('/cursors/default.svg') 2 1,
+      auto;
+  }
+  a,
+  button,
+  [role='button'],
+  summary,
+  label,
+  select {
+    cursor:
+      url('/cursors/pointer.svg') 10 2,
+      pointer;
+  }
+}
+
+/* ───────────────────────── 3. Utilities ───────────────────────── */
+/* full width at every size: only the side gutters, no max-width */
+@utility container-x {
+  width: 100%;
+  padding-inline: var(--gutter);
+}
+@utility section-y {
+  padding-block: var(--space-section);
+}
+@utility lines {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat;
+  padding-bottom: 2px;
+  transition: background-size 0.3s ease-out;
+}
+@utility dotted-x {
+  background-image: linear-gradient(to right, currentColor 2px, transparent 2px);
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  height: 1px;
+}
+@utility dotted-y {
+  background-image: linear-gradient(to bottom, currentColor 2px, transparent 2px);
+  background-size: 1px 5px;
+  background-repeat: repeat-y;
+  width: 1px;
+}
+@utility hatch {
+  background-image: repeating-linear-gradient(135deg, currentColor 0 1px, transparent 1px 10px);
+}
+@utility font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+/* section rhythm: two ivory sections in a row share a 64px gap; full 96px where palettes meet */
+section[data-tone='ivory'].section-y:has(+ section[data-tone='ivory']) {
+  padding-bottom: 0;
+}
+section[data-tone='ivory'] + section[data-tone='ivory'].section-y {
+  padding-top: 4rem;
+}
+
+.group:hover .lines,
+.group:focus-visible .lines {
+  background-size: 100% 1px;
+}
+
+/* ───────────────────────── 4. Buttons ───────────────────────── */
+.btn {
+  --btn-bg: var(--foreground);
+  --btn-fg: var(--foreground-inverse);
+  --btn-fill: var(--foreground-inverse);
+  --btn-fg-hover: var(--foreground);
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0 1.25rem;
+  border: 1px solid var(--foreground);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font: 400 var(--text-control) / 1 var(--font-body);
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    transform 0.12s ease-out,
+    color 0.16s 0.14s;
+}
+@media (min-width: 640px) {
+  .btn {
+    min-height: 2.75rem;
+  }
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-secondary {
+  --btn-bg: var(--background);
+  --btn-fg: var(--foreground);
+  --btn-fill: var(--foreground);
+  --btn-fg-hover: var(--foreground-inverse);
+}
+.btn > .btn-label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn .px-fill {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.btn .px-fill > i {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--btn-fill);
+  opacity: 0;
+  transition: opacity 0s calc(420ms - var(--d, 0ms));
+}
+.btn.is-filled {
+  color: var(--btn-fg-hover);
+}
+.btn.is-filled .px-fill > i {
+  opacity: 1;
+  transition-delay: var(--d, 0ms);
+}
+/* devices without the pixel effect: plain swap */
+.btn:not([data-px]):hover {
+  background: var(--btn-fill);
+  color: var(--btn-fg-hover);
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn .px-fill {
+    display: none;
+  }
+}
+
+/* tertiary: text + arrow + underline scaling from left */
+.link-tertiary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: var(--text-control);
+  line-height: 1;
+  padding-bottom: 4px;
+}
+.link-tertiary::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+.link-tertiary:hover::after,
+.link-tertiary:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ───────────────────────── 5. Header & menus ───────────────────────── */
+.nav-surface,
+.nav-surface a,
+.nav-surface button,
+.nav-cell {
+  transition:
+    background-color var(--nav-swap),
+    color var(--nav-swap),
+    border-color var(--nav-swap);
+}
+html[data-nav-instant] .nav-surface,
+html[data-nav-instant] .nav-surface * {
+  transition: none !important;
+}
+
+.logo-mono {
+  display: none;
+}
+.on-blue .logo-color,
+html[data-nav-on-blue] .nav-surface .logo-color {
+  display: none;
+}
+.on-blue .logo-mono,
+html[data-nav-on-blue] .nav-surface .logo-mono {
+  display: inline-flex;
+}
+.nav-cta {
+  font-size: 0.9375rem;
+}
+
+.chev {
+  transition: transform 0.3s ease-out;
+}
+/* direct child only: an open Dialog/Item ancestor must not flip every chevron inside it */
+[data-state='open'] > .chev {
+  transform: rotate(180deg);
+}
+
+.nm-viewport {
+  transform-origin: top left;
+  height: var(--radix-navigation-menu-viewport-height);
+  width: var(--radix-navigation-menu-viewport-width);
+  transition:
+    width 0.3s ease-out,
+    height 0.3s ease-out;
+}
+.nm-viewport[data-state='open'] {
+  animation: nm-in 0.25s ease-out;
+}
+.nm-viewport[data-state='closed'] {
+  animation: nm-out 0.15s ease-out forwards;
+}
+.nm-content[data-motion='from-start'] {
+  animation: nm-from-start 0.25s ease-out;
+}
+.nm-content[data-motion='from-end'] {
+  animation: nm-from-end 0.25s ease-out;
+}
+.nm-content[data-motion='to-start'] {
+  animation: nm-to-start 0.25s ease-out forwards;
+}
+.nm-content[data-motion='to-end'] {
+  animation: nm-to-end 0.25s ease-out forwards;
+}
+@keyframes nm-in {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes nm-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes nm-from-start {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+}
+@keyframes nm-from-end {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+}
+@keyframes nm-to-start {
+  to {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+}
+@keyframes nm-to-end {
+  to {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+}
+
+.sheet-row {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: sheet-row 0.35s var(--ease) forwards;
+  animation-delay: calc(var(--i) * 45ms + 60ms);
+}
+@keyframes sheet-row {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* accordion height (Radix) */
+.acc-content {
+  overflow: hidden;
+}
+.acc-content[data-state='open'] {
+  animation: acc-down 0.3s var(--ease);
+}
+.acc-content[data-state='closed'] {
+  animation: acc-up 0.25s var(--ease);
+}
+@keyframes acc-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes acc-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+.plus {
+  position: relative;
+  width: 11px;
+  height: 11px;
+  flex: none;
+}
+.plus::before,
+.plus::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  transition: transform 0.3s ease-out;
+}
+.plus::before {
+  left: 0;
+  right: 0;
+  top: 5px;
+  height: 1px;
+}
+.plus::after {
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  width: 1px;
+}
+[data-state='open'] > .plus::after {
+  transform: scaleY(0);
+}
+
+/* ───────────────────────── 6. Rolling text ───────────────────────── */
+.roll-line {
+  display: block;
+}
+.roll-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.reel {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  height: 1.2em;
+  margin-block: -0.075em;
+  line-height: 1.2em;
+}
+/* invisible copy of the real letter: gives the reel exactly that letter's width */
+.reel-size {
+  visibility: hidden;
+  display: block;
+}
+.reel-strip {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  transform: translate(-50%, 1.2em);
+  transition: transform var(--t, 900ms) cubic-bezier(var(--x1, 0.32), 0, 0.12, 1) var(--d, 0ms);
+}
+.reel-strip > span {
+  height: 1.2em;
+}
+.roll[data-state='run'] .reel-strip,
+.roll[data-state='done'] .reel-strip {
+  transform: translate(-50%, calc(-1.2em * (var(--n) - 1)));
+}
+.roll[data-state='idle'] .reel-strip {
+  animation: roll-failsafe 0s 4s forwards;
+}
+@keyframes roll-failsafe {
+  to {
+    transform: translate(-50%, calc(-1.2em * (var(--n) - 1)));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reel-strip {
+    transition: none;
+    transform: translate(-50%, calc(-1.2em * (var(--n) - 1))) !important;
+  }
+}
+
+/* ───────────────────────── 7. Reveals & keyframes ───────────────────────── */
+.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s cubic-bezier(0.33, 1, 0.68, 1),
+    transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+.js-motion .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-motion .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* preloader: plates drop in (power2.in), wordmark rises (power3.out), curtain lifts */
+.preloader .pl-solid {
+  opacity: 0;
+}
+.preloader.is-run .pl-solid {
+  animation: pl-drop 0.42s cubic-bezier(0.55, 0, 1, 0.45) both;
+}
+.preloader .pl-word {
+  transform: translateY(105%);
+}
+.preloader.is-run .pl-word {
+  animation: pl-rise 0.5s 0.95s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+.preloader.is-run {
+  animation:
+    pl-lift 0.6s 1.55s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+    preloader-hide 0s 3.2s forwards;
+}
+@keyframes pl-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-140px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pl-rise {
+  to {
+    transform: none;
+  }
+}
+@keyframes pl-lift {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.page-appear {
+  animation: page-appear 0.6s var(--ease) both;
+}
+@keyframes page-appear {
+  from {
+    opacity: 0;
+  }
+}
+html:not([data-preloader='on']) .preloader {
+  display: none;
+}
+
+.nudge {
+  animation: nudge 3.2s infinite;
+}
+@keyframes nudge {
+  0%,
+  30% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(-4px, -4px);
+  }
+  42%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.toast-in {
+  animation: toast-in 0.35s var(--ease) both;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* preloader failsafe: hidden after 3s even if JS stalls */
+.preloader {
+  animation: preloader-hide 0s 3.2s forwards;
+}
+@keyframes preloader-hide {
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nudge,
+  .page-appear,
+  .sheet-row {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* drawn boxes (FAQ): edges trace in clockwise, then content fades */
+.drawbox .db-edge {
+  position: absolute;
+  background: currentColor;
+  pointer-events: none;
+  transition: transform 0.7s var(--ease-trace);
+}
+.db-t {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  transform-origin: left;
+}
+.db-r {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  transform-origin: top;
+  transition-delay: 0.15s !important;
+}
+.db-b {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  transform-origin: right;
+  transition-delay: 0.3s !important;
+}
+.db-l {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  transform-origin: bottom;
+  transition-delay: 0.45s !important;
+}
+.drawbox .db-content {
+  transition: opacity 0.6s 0.45s;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .drawbox[data-draw='pending'] .db-t,
+  .drawbox[data-draw='pending'] .db-b {
+    transform: scaleX(0);
+  }
+  .drawbox[data-draw='pending'] .db-r,
+  .drawbox[data-draw='pending'] .db-l {
+    transform: scaleY(0);
+  }
+  .drawbox[data-draw='pending'] .db-content {
+    opacity: 0;
+  }
+}
+
+/* ───────────────────────── 8. Misc ───────────────────────── */
+.sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ───────────────────────── 9. Iso stack ───────────────────────── */
+/* Plates: the top one is solid ivory with a blue sketch; covered ones fade to an ivory outline
+   on blue; plates not reached yet wait off to the upper right (they land down-left along the
+   iso axis). Colours are explicit so the stack reads the same in any section. */
+.iso-shift {
+  transition: transform 0.6s var(--ease-settle) 0.1s;
+}
+.iso-plate {
+  transition:
+    transform 0.6s var(--ease-settle),
+    opacity 0.15s linear;
+}
+.iso-plate[data-state='out'] {
+  opacity: 0;
+  transform: translate(190px, -80px);
+  transition:
+    transform 0.45s var(--ease),
+    opacity 0.15s linear 0.3s;
+}
+.iso-plate .iso-side {
+  fill: var(--ivory);
+  stroke: var(--blue);
+  transition:
+    fill 0.45s var(--ease) 0.35s,
+    stroke 0.45s var(--ease) 0.35s;
+}
+.iso-plate .iso-shade {
+  fill: color-mix(in srgb, var(--blue) 14%, var(--ivory));
+}
+.iso-plate .iso-face {
+  color: var(--blue);
+  transition: opacity 0.3s var(--ease) 0.35s;
+}
+.iso-plate[data-state='ghost'] .iso-side {
+  fill: color-mix(in srgb, var(--ivory) 0%, transparent);
+  stroke: var(--ivory);
+}
+.iso-plate[data-state='ghost'] .iso-face {
+  opacity: 0;
+}
+.iso-plate[data-state='top'] .iso-side,
+.iso-plate[data-state='top'] .iso-face {
+  transition-delay: 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .iso-shift,
+  .iso-plate,
+  .iso-plate .iso-side,
+  .iso-plate .iso-face {
+    transition: none;
+  }
+}
+
+/* ───────────────────────── 10. Hero + layers scene ───────────────────────── */
+/* Masks for rise-in text (components/motion/Masks.tsx). Inert unless the scene is pinned. */
+.mline-m,
+.mw {
+  overflow: hidden;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.mw {
+  display: inline-block;
+  vertical-align: top;
+}
+.mw > span {
+  display: inline-block;
+}
+/* Pixel-dissolve overlay (lib/dissolve.ts) */
+.dz-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Accordion: one bordered box, items separated by drawn rules */
+.layer-box {
+  border: 1px solid var(--foreground);
+}
+.layer-rule {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1;
+  height: 1px;
+  background: var(--foreground);
+  transform-origin: left;
+}
+.layer-row {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.layer-row > div {
+  min-height: 0;
+  overflow: hidden;
+}
+/* the title-only row label fades in once the body has folded, and leaves at once when it reopens */
+.layer-rowtitle {
+  transition:
+    opacity 0.3s var(--ease) 0.5s,
+    visibility 0s 0.5s;
+}
+.layer-item[data-on='true'] .layer-rowtitle {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.15s var(--ease),
+    visibility 0s 0.15s;
+}
+.layer-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s var(--ease);
+}
+.layer-body > div {
+  min-height: 0;
+  overflow: hidden;
+}
+.layer-item[data-on='true'] .layer-body {
+  grid-template-rows: 1fr;
+}
+.layer-item .layer-body > div {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.layer-item[data-on='true'] .layer-body > div {
+  opacity: 1;
+  transition: opacity 0.4s 0.15s;
+}
+@media (max-width: 1023px) {
+  .layer-body {
+    grid-template-rows: 1fr;
+  }
+  .layer-item .layer-body > div {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hl-hero {
+    height: calc(100svh - var(--header-h));
+    min-height: 640px;
+  }
+}
+@media (min-width: 1024px) and (max-height: 820px) {
+  .is-pinned .hl-head {
+    padding-block: 1rem;
+  }
+  .is-pinned .hl-intro {
+    display: none;
+  }
+}
+
+/* ── Pinned scene (capable desktops). Geometry is written inline per frame by HeroLayers. ── */
+.is-pinned .hl-pin {
+  height: calc(100svh - var(--header-h));
+  overflow: hidden;
+}
+.is-pinned .hl-hero {
+  position: absolute;
+  inset: 0;
+  height: auto;
+  min-height: 0;
+}
+.is-pinned .hl-band {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 2;
+  will-change: transform;
+}
+.is-pinned .hl-field {
+  position: absolute;
+  inset: 0;
+}
+.is-pinned .hl-grid {
+  display: block;
+}
+.is-pinned .hl-board {
+  position: absolute;
+  left: 0;
+  top: var(--band-h);
+  bottom: 0;
+  width: calc(100% - var(--hero-aside));
+  height: auto;
+  will-change: transform;
+}
+.is-pinned .hl-col {
+  position: absolute;
+  z-index: 1;
+  top: var(--band-h);
+  left: calc(100% - var(--hero-aside));
+  right: 0;
+  bottom: 0;
+}
+.is-pinned .hl-cell {
+  flex: none;
+  overflow: hidden;
+}
+
+/* Handover (data-in): the layers overlay plays in on a timer once the hero has left, and plays
+   out again when scrolling back. Its background is transparent so the hero stays visible under it. */
+.is-pinned .hl-layers {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: transparent;
+  visibility: hidden;
+  transition: visibility 0s 0.6s;
+}
+.is-pinned[data-in='true'] .hl-layers {
+  visibility: visible;
+  transition-delay: 0s;
+}
+.is-pinned .hl-head .mline,
+.is-pinned .hl-head .mw > span {
+  transform: translateY(110%);
+  transition: transform 0.3s var(--ease);
+}
+.is-pinned[data-in='true'] .hl-head .mline,
+.is-pinned[data-in='true'] .hl-head .mw > span {
+  transform: none;
+  transition: transform 0.55s var(--ease-roll) calc(0.05s + var(--l, 0) * 0.1s);
+}
+.is-pinned .hl-stack {
+  transform: translateX(12rem);
+  transition: transform 0.3s var(--ease);
+}
+.is-pinned[data-in='true'] .hl-stack {
+  transform: none;
+  transition: transform 0.4s var(--ease-settle);
+}
+
+/* Step 1: the box draws as a flat outline left → right, then its first item grows open.
+   Later steps: the previous item folds to its title row, the next one's rule draws and it opens. */
+.is-pinned .layer-box {
+  clip-path: inset(-6px calc(100% + 6px) -6px -6px);
+  transition: clip-path 0.3s var(--ease-trace) 0.45s;
+}
+.is-pinned .layer-box[data-drawn='true'] {
+  clip-path: inset(-6px -6px -6px -6px);
+  transition-delay: 0s;
+}
+.is-pinned .layer-row {
+  transition: grid-template-rows 0.5s var(--ease) 0.3s;
+}
+.is-pinned .layer-item[data-state='hidden'] .layer-row {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s var(--ease) 0.15s;
+}
+.is-pinned .layer-rule {
+  transition: transform 0.35s var(--ease-trace) 0.25s;
+}
+.is-pinned .layer-item[data-state='hidden'] .layer-rule {
+  transform: scaleX(0);
+  transition-delay: 0.3s;
+}
+.is-pinned .layer-item[data-state='hidden'] .layer-body {
+  grid-template-rows: 1fr;
+}
+.is-pinned .layer-item .layer-body {
+  transition: grid-template-rows 0.45s var(--ease) 0.2s;
+}
+.is-pinned .layer-item[data-state='open'] .layer-body {
+  transition-delay: 0.3s;
+}
+.is-pinned .layer-item .layer-body > div,
+.is-pinned .layer-item[data-on='true'] .layer-body > div {
+  opacity: 1;
+  transition: none;
+}
+.is-pinned .layer-item .mw > span {
+  transform: translateY(110%);
+  transition: transform 0.25s var(--ease);
+}
+.is-pinned .layer-item[data-state='open'] .mw > span {
+  transform: none;
+  transition: transform 0.5s var(--ease-roll) calc(0.45s + var(--d, 0s) + var(--l, 0) * 0.07s);
+}
+.is-pinned .layer-btns > * {
+  clip-path: inset(-6px calc(100% + 6px) -6px -6px);
+  transition:
+    clip-path 0.2s var(--ease),
+    transform 0.12s ease-out,
+    color 0.16s 0.14s;
+}
+.is-pinned .layer-item[data-state='open'] .layer-btns > * {
+  clip-path: inset(-6px -6px -6px -6px);
+  transition:
+    clip-path 0.4s var(--ease-trace) 0.8s,
+    transform 0.12s ease-out,
+    color 0.16s 0.14s;
+}
+.is-pinned .layer-item[data-state='open'] .layer-btns > * + * {
+  transition-delay: 0.9s, 0s, 0.14s;
+}
+
+/* ───────────────────────── 11. Final-CTA pipeline scene ───────────────────────── */
+/* Two layouts of one scene; the container (not the viewport) picks one, so the text never shrinks below legibility. */
+.ps {
+  container-type: inline-size;
+  font-family: var(--font-body);
+  background: #fff;
+}
+.ps-compact {
+  display: none;
+}
+@container (max-width: 600px) {
+  .ps-wide {
+    display: none;
+  }
+  .ps-compact {
+    display: block;
+  }
+}
+/* running pipeline: links flow like React Flow "animated" edges */
+.ps-flow {
+  stroke-dasharray: 5 4;
+  animation: ps-flow 0.5s linear infinite;
+}
+@keyframes ps-flow {
+  to {
+    stroke-dashoffset: -9;
+  }
+}
+
+/* Open-source tree: pixels running down the trunk into the branches (TreePulses) */
+.tree-pulse {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 3px;
+  background: currentColor;
+  visibility: hidden;
+  will-change: transform;
+}

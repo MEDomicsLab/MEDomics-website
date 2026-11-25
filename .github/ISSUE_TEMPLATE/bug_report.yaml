@@ -1,0 +1,106 @@
+name: 'Website bug'
+description: Something on the MEDomics website is broken (layout, link, animation, accessibility, download…).
+title: '[BUG] - <title>'
+labels:
+  - 'bug'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem with the **website**. For a bug in the MEDomics **application**, please use [MEDomicsLab/MEDomics](https://github.com/MEDomicsLab/MEDomics/issues) instead.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 'Before submitting'
+      options:
+        - label: I searched the existing issues and this bug is not reported yet.
+          required: true
+        - label: This is about the website, not the MEDomics application.
+          required: true
+        - label: My report contains no personal or patient data.
+          required: true
+  - type: input
+    id: page-url
+    attributes:
+      label: 'Affected page'
+      description: The full URL or route.
+      placeholder: 'https://medomics.app/en/download/'
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 'What is wrong'
+      placeholder: 'On a phone, the download buttons overlap the version picker.'
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 'Steps to reproduce'
+      value: |
+        1. Go to '...'
+        2. Scroll to / click on '...'
+        3. See the problem
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 'Expected behaviour'
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 'Screenshots or recording'
+      description: Drag and drop images or a short video. Very helpful for visual bugs.
+    validations:
+      required: false
+  - type: dropdown
+    id: browser
+    attributes:
+      label: 'Browser'
+      options:
+        - 'Chrome / Edge / other Chromium'
+        - 'Firefox'
+        - 'Safari (macOS)'
+        - 'Safari (iOS)'
+        - 'Chrome (Android)'
+        - 'Other'
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: 'Operating system'
+      options:
+        - 'Windows'
+        - 'macOS'
+        - 'Linux'
+        - 'iOS'
+        - 'Android'
+        - 'Other'
+    validations:
+      required: true
+  - type: input
+    id: viewport
+    attributes:
+      label: 'Screen size or device'
+      placeholder: 'e.g. 1440×900 laptop, iPhone 15, 768px tablet'
+    validations:
+      required: false
+  - type: checkboxes
+    id: motion
+    attributes:
+      label: 'Settings'
+      options:
+        - label: My system has 'Reduce motion' turned on
+  - type: textarea
+    id: console
+    attributes:
+      label: 'Console errors'
+      description: Open the browser DevTools → Console and paste any red errors.
+      render: text
+    validations:
+      required: false

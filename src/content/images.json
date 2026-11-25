@@ -1,0 +1,203 @@
+{
+  "home": {
+    "width": 3832,
+    "height": 2040,
+    "alt": "MEDomics home screen with the workspace panel and module sidebar",
+    "avif": [
+      {
+        "src": "/images/home-960.avif",
+        "w": 960
+      },
+      {
+        "src": "/images/home-1920.avif",
+        "w": 1920
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/home-960.webp",
+        "w": 960
+      },
+      {
+        "src": "/images/home-1920.webp",
+        "w": 1920
+      }
+    ]
+  },
+  "data-table": {
+    "width": 1920,
+    "height": 1016,
+    "alt": "Input module data table with coloured column tags",
+    "avif": [
+      {
+        "src": "/images/data-table-960.avif",
+        "w": 960
+      },
+      {
+        "src": "/images/data-table-1920.avif",
+        "w": 1920
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/data-table-960.webp",
+        "w": 960
+      },
+      {
+        "src": "/images/data-table-1920.webp",
+        "w": 1920
+      }
+    ]
+  },
+  "exploratory": {
+    "width": 1918,
+    "height": 1007,
+    "alt": "Exploratory module with SweetViz, ydata-profiling and D-Tale panels",
+    "avif": [
+      {
+        "src": "/images/exploratory-960.avif",
+        "w": 960
+      },
+      {
+        "src": "/images/exploratory-1918.avif",
+        "w": 1918
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/exploratory-960.webp",
+        "w": 960
+      },
+      {
+        "src": "/images/exploratory-1918.webp",
+        "w": 1918
+      }
+    ]
+  },
+  "canvas": {
+    "width": 548,
+    "height": 778,
+    "alt": "Learning module canvas: Dataset, Clean, Split and Model nodes in the Initialization box",
+    "avif": [
+      {
+        "src": "/images/canvas-548.avif",
+        "w": 548
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/canvas-548.webp",
+        "w": 548
+      }
+    ]
+  },
+  "guardrail": {
+    "width": 722,
+    "height": 644,
+    "alt": "A Clean node misplaced in the Training box turns the box red",
+    "avif": [
+      {
+        "src": "/images/guardrail-722.avif",
+        "w": 722
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/guardrail-722.webp",
+        "w": 722
+      }
+    ]
+  },
+  "results-analysis": {
+    "width": 1099,
+    "height": 328,
+    "alt": "Analysis panel with ROC curves and the Finalize & Save Model and Generate buttons",
+    "avif": [
+      {
+        "src": "/images/results-analysis-1099.avif",
+        "w": 1099
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/results-analysis-1099.webp",
+        "w": 1099
+      }
+    ]
+  },
+  "notebook": {
+    "width": 1399,
+    "height": 775,
+    "alt": "Opening a generated pipeline notebook in Jupyter or VS Code",
+    "avif": [
+      {
+        "src": "/images/notebook-700.avif",
+        "w": 700
+      },
+      {
+        "src": "/images/notebook-1399.avif",
+        "w": 1399
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/notebook-700.webp",
+        "w": 700
+      },
+      {
+        "src": "/images/notebook-1399.webp",
+        "w": 1399
+      }
+    ]
+  },
+  "lab-logo": {
+    "width": 700,
+    "height": 700,
+    "alt": "The former MEDomicsLab logo",
+    "avif": [
+      {
+        "src": "/images/lab-logo-320.avif",
+        "w": 320
+      },
+      {
+        "src": "/images/lab-logo-640.avif",
+        "w": 640
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/lab-logo-320.webp",
+        "w": 320
+      },
+      {
+        "src": "/images/lab-logo-640.webp",
+        "w": 640
+      }
+    ]
+  },
+  "logo": {
+    "width": 700,
+    "height": 700,
+    "alt": "MEDomics logo",
+    "avif": [
+      {
+        "src": "/images/logo-320.avif",
+        "w": 320
+      },
+      {
+        "src": "/images/logo-640.avif",
+        "w": 640
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/logo-320.webp",
+        "w": 320
+      },
+      {
+        "src": "/images/logo-640.webp",
+        "w": 640
+      }
+    ]
+  }
+}

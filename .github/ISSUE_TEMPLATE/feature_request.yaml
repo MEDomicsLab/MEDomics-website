@@ -1,0 +1,80 @@
+name: 'Website improvement'
+description: Suggest a new page, section, content or UX improvement for the MEDomics website.
+title: '[FEAT] - <title>'
+labels:
+  - 'enhancement'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion! Describe **what** you would like and **why**. Copy changes usually only touch `src/content/en/index.ts`, so they are small and welcome.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 'Before submitting'
+      options:
+        - label: I searched the existing issues for a similar request.
+          required: true
+        - label: This is about the website, not a feature of the MEDomics application.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 'Problem or opportunity'
+      description: What is missing, unclear or hard to do on the site today?
+      placeholder: 'Researchers cannot find how to cite MEDomics.'
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 'Proposed change'
+      description: What should the site show or do? Include accessibility and mobile considerations if relevant.
+      placeholder: "Add a 'Cite MEDomics' block with BibTeX on the About page."
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 'Mock-ups, screenshots, references'
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: 'Area'
+      multiple: true
+      options:
+        - 'Home'
+        - 'Platform'
+        - 'Download'
+        - 'About'
+        - 'Header / footer / navigation'
+        - 'Copy and content'
+        - 'Animation and motion'
+        - 'Performance / accessibility / SEO'
+        - 'CI / tooling'
+        - 'Other'
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: 'Size'
+      options:
+        - 'Tiny (copy tweak, single component)'
+        - 'Small (one page, no new dependency)'
+        - 'Medium (new section or page)'
+        - 'Large (cross-cutting, new dependency, redesign)'
+    validations:
+      required: true
+  - type: dropdown
+    id: contribution
+    attributes:
+      label: 'Would you like to implement it?'
+      options:
+        - 'Yes'
+        - 'Yes, with guidance'
+        - 'No, request only'
+    validations:
+      required: true

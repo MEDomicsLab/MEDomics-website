@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🐞 A bug or idea about the MEDomics application
+    url: https://github.com/MEDomicsLab/MEDomics/issues
+    about: This repository is the website only. Report application issues in MEDomicsLab/MEDomics.
+  - name: 💬 Questions and help using MEDomics
+    url: https://discord.com/invite/ZbaGj8E6mP
+    about: Ask the community and the developers on Discord.
+  - name: 📚 Documentation
+    url: https://medomicslab.gitbook.io/medomics-docs
+    about: Tutorials and module guides.
+  - name: 🔒 Security vulnerability
+    url: https://github.com/MEDomicsLab/MEDomics-website/security/advisories/new
+    about: Never in a public issue. Report it privately to the maintainers (see SECURITY.md).
+  - name: 🗣️ Reports and discussions with the MEDomicsLab team
+    url: https://github.com/orgs/MEDomicsLab/discussions
+    about: Code of Conduct reports, proposals and general discussions.

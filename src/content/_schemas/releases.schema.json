@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MEDomics releases",
+  "description": "Written by scripts/fetch-releases.mjs from the public GitHub Releases API of MEDomicsLab/MEDomics.",
+  "type": "object",
+  "required": ["fetchedAt", "releases"],
+  "additionalProperties": false,
+  "properties": {
+    "fetchedAt": { "type": ["string", "null"], "format": "date-time" },
+    "releases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tag", "name", "date", "prerelease", "url", "channel", "assets"],
+        "additionalProperties": false,
+        "properties": {
+          "tag": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "date": { "type": "string", "format": "date-time" },
+          "prerelease": { "type": "boolean" },
+          "url": { "type": "string", "format": "uri", "pattern": "^https://github\\.com/MEDomicsLab/MEDomics/releases/" },
+          "channel": { "enum": ["app", "client", "server"] },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "url", "size", "os"],
+              "additionalProperties": false,
+              "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "url": { "type": "string", "format": "uri", "pattern": "^https://github\\.com/MEDomicsLab/MEDomics/releases/download/" },
+                "size": { "type": "integer", "minimum": 0 },
+                "os": { "enum": ["windows", "mac", "linux", "other"] }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

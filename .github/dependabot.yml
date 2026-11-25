@@ -1,0 +1,34 @@
+version: 2
+updates:
+  # npm: one grouped PR a week for minor/patch updates; majors arrive one by one.
+  # Commit prefixes keep Dependabot PR titles Conventional, so they pass the title check.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'fix(deps)'
+      prefix-development: 'chore(deps)'
+    groups:
+      production:
+        dependency-type: production
+        update-types: [minor, patch]
+      tooling:
+        dependency-type: development
+        update-types: [minor, patch]
+    labels: [dependencies]
+
+  # GitHub Actions used by the workflows
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: 'ci(deps)'
+    groups:
+      actions:
+        patterns: ['*']
+    labels: [dependencies, ci]

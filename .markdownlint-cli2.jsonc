@@ -1,0 +1,11 @@
+{
+  "config": {
+    "default": true,
+    "MD013": false, // line length: prose is wrapped by the editor
+    "MD033": false, // inline HTML: the README header uses <p align>, <img>, <details>
+    "MD041": false, // first line: the README starts with a banner, not a heading
+    "MD024": { "siblings_only": true },
+  },
+  "globs": ["*.md", ".github/**/*.md", "docs/**/*.md"],
+  "ignores": ["node_modules", ".next", "out", "public"],
+}

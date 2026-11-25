@@ -1,0 +1,31 @@
+name: Refresh release data
+
+# Vercel fetches the MEDomics releases on every build (npm run build → scripts/fetch-releases.mjs).
+# This workflow triggers a fresh production build once a week, so a new MEDomics release reaches
+# the download page and release card without anyone pushing to this repository.
+#
+# Setup (once): Vercel → Project → Settings → Git → Deploy Hooks → create a hook for `main`,
+# then save its URL as the repository secret VERCEL_DEPLOY_HOOK_URL.
+# Run it by hand (Actions → Refresh release data → Run workflow) right after a MEDomics release.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  redeploy:
+    name: Trigger a production build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Call the Vercel deploy hook
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::notice::VERCEL_DEPLOY_HOOK_URL is not set; nothing to do (see the comment at the top of this workflow)."
+            exit 0
+          fi
+          curl -fsS -X POST "$HOOK" > /dev/null && echo "Production build requested."

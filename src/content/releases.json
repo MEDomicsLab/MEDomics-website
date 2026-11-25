@@ -1,0 +1,704 @@
+{
+  "fetchedAt": "2026-11-25T14:00:37.652Z",
+  "releases": [
+    {
+      "tag": "v1.8.1",
+      "name": "1.8.1",
+      "date": "2026-04-11T15:16:52Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.8.1",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomics-1.8.1-linux.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.1/MEDomics-1.8.1-linux.deb",
+          "size": 244789084,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomics-1.8.1-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.1/MEDomics-1.8.1-mac.dmg",
+          "size": 331132144,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.8.1-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.1/MEDomics-1.8.1-mac.pkg",
+          "size": 331701255,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.8.1-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.1/MEDomics-1.8.1-mac.zip",
+          "size": 321432647,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.8.1-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.1/MEDomics-1.8.1-ubuntu.deb",
+          "size": 244789084,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomics-1.8.1-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.1/MEDomics-1.8.1-win.exe",
+          "size": 273739695,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "server-v1.8.0",
+      "name": "MEDomicsLab Server-1.8.0",
+      "date": "2026-03-03T20:29:08Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/server-v1.8.0",
+      "channel": "server",
+      "assets": [
+        {
+          "name": "MEDomicsLab-Server-1.8.0-darwin.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/server-v1.8.0/MEDomicsLab-Server-1.8.0-darwin.zip",
+          "size": 51650739,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-Server-1.8.0-linux.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/server-v1.8.0/MEDomicsLab-Server-1.8.0-linux.zip",
+          "size": 54852956,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-Server-1.8.0-win32.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/server-v1.8.0/MEDomicsLab-Server-1.8.0-win32.zip",
+          "size": 49282613,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.8.0",
+      "name": "MEDomics-1.8.0",
+      "date": "2026-02-18T22:02:53Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.8.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomics-1.8.0-linux.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.0/MEDomics-1.8.0-linux.deb",
+          "size": 243592296,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomics-1.8.0-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.0/MEDomics-1.8.0-mac.dmg",
+          "size": 331068738,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.8.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.0/MEDomics-1.8.0-mac.pkg",
+          "size": 331572132,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.8.0-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.0/MEDomics-1.8.0-mac.zip",
+          "size": 321320689,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.8.0-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.0/MEDomics-1.8.0-ubuntu.deb",
+          "size": 243592296,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomics-1.8.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.8.0/MEDomics-1.8.0-win.exe",
+          "size": 273537248,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.7.1",
+      "name": "MEDomics-1.7.1",
+      "date": "2025-12-27T19:09:42Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.7.1",
+      "channel": "app",
+      "assets": []
+    },
+    {
+      "tag": "v1.7.0",
+      "name": "MEDomics-1.7.0",
+      "date": "2025-12-17T21:27:18Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.7.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomics-1.7.0-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.7.0/MEDomics-1.7.0-mac.dmg",
+          "size": 331108974,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.7.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.7.0/MEDomics-1.7.0-mac.pkg",
+          "size": 331012922,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.7.0-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.7.0/MEDomics-1.7.0-mac.zip",
+          "size": 320883356,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.7.0-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.7.0/MEDomics-1.7.0-ubuntu.deb",
+          "size": 192007200,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomics-1.7.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.7.0/MEDomics-1.7.0-win.exe",
+          "size": 268851261,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.6.0",
+      "name": "MEDomics-1.6.0",
+      "date": "2025-11-26T21:41:06Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.6.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomics-1.6.0-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.6.0/MEDomics-1.6.0-mac.dmg",
+          "size": 329033860,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.6.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.6.0/MEDomics-1.6.0-mac.pkg",
+          "size": 328854428,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.6.0-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.6.0/MEDomics-1.6.0-mac.zip",
+          "size": 318799669,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomics-1.6.0-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.6.0/MEDomics-1.6.0-ubuntu.deb",
+          "size": 189956570,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomics-1.6.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.6.0/MEDomics-1.6.0-win.exe",
+          "size": 267141578,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.5.0",
+      "name": "MEDomicsLab-1.5.0",
+      "date": "2025-03-20T18:13:12Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.5.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-1.5.0-linux.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.5.0/MEDomicsLab-1.5.0-linux.deb",
+          "size": 165789460,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.5.0-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.5.0/MEDomicsLab-1.5.0-mac.dmg",
+          "size": 307053768,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.5.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.5.0/MEDomicsLab-1.5.0-mac.pkg",
+          "size": 306469919,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.5.0-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.5.0/MEDomicsLab-1.5.0-mac.zip",
+          "size": 297563241,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.5.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.5.0/MEDomicsLab-1.5.0-win.exe",
+          "size": 235311503,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.4.0",
+      "name": "MEDomicsLab-1.4.0",
+      "date": "2025-03-18T18:50:34Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.4.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-1.4.0-linux-old.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.4.0/MEDomicsLab-1.4.0-linux-old.deb",
+          "size": 165784242,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.4.0-linux.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.4.0/MEDomicsLab-1.4.0-linux.deb",
+          "size": 165702316,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.4.0-mac-old.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.4.0/MEDomicsLab-1.4.0-mac-old.pkg",
+          "size": 491568218,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.4.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.4.0/MEDomicsLab-1.4.0-mac.pkg",
+          "size": 302261966,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.4.0-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.4.0/MEDomicsLab-1.4.0-ubuntu.deb",
+          "size": 264545448,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.4.0-win-autoupdate.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.4.0/MEDomicsLab-1.4.0-win-autoupdate.exe",
+          "size": 221691173,
+          "os": "windows"
+        },
+        {
+          "name": "MEDomicsLab-1.4.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.4.0/MEDomicsLab-1.4.0-win.exe",
+          "size": 322629598,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.3.0",
+      "name": "MEDomicsLab-1.3.0",
+      "date": "2025-03-18T18:50:08Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.3.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-1.3.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.3.0/MEDomicsLab-1.3.0-mac.pkg",
+          "size": 491530685,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.3.0-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.3.0/MEDomicsLab-1.3.0-ubuntu.deb",
+          "size": 264509688,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.3.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.3.0/MEDomicsLab-1.3.0-win.exe",
+          "size": 322613475,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.2.0",
+      "name": "MEDomicsLab-1.2.0",
+      "date": "2025-03-18T18:49:25Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.2.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-1.2.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.2.0/MEDomicsLab-1.2.0-mac.pkg",
+          "size": 491538692,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.2.0-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.2.0/MEDomicsLab-1.2.0-ubuntu.deb",
+          "size": 264538498,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.2.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.2.0/MEDomicsLab-1.2.0-win.exe",
+          "size": 322607731,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.1.0",
+      "name": "MEDomicsLab-1.1.0",
+      "date": "2025-03-18T18:48:42Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.1.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-1.1.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.1.0/MEDomicsLab-1.1.0-mac.pkg",
+          "size": 491558257,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.1.0-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.1.0/MEDomicsLab-1.1.0-ubuntu.deb",
+          "size": 264522446,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.1.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.1.0/MEDomicsLab-1.1.0-win.exe",
+          "size": 322600530,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.2",
+      "name": "1.0.2",
+      "date": "2025-02-25T14:47:41Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.0.2",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-1.0.2-linux-amd64.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.0.2/MEDomicsLab-1.0.2-linux-amd64.deb",
+          "size": 258070556,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.0.2-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.0.2/MEDomicsLab-1.0.2-win.exe",
+          "size": 370832733,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.1",
+      "name": "1.0.1",
+      "date": "2025-02-25T14:54:19Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.0.1",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-1.0.1-linux-amd64.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.0.1/MEDomicsLab-1.0.1-linux-amd64.deb",
+          "size": 258068056,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.0.1-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.0.1/MEDomicsLab-1.0.1-win.exe",
+          "size": 370829850,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.0",
+      "name": "MEDomicsLab-1.0.0",
+      "date": "2024-12-13T16:38:51Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v1.0.0",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-1.0.0-mac-signed.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.0.0/MEDomicsLab-1.0.0-mac-signed.pkg",
+          "size": 465901357,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.0.0-mac.pkg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.0.0/MEDomicsLab-1.0.0-mac.pkg",
+          "size": 489831916,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-1.0.0-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.0.0/MEDomicsLab-1.0.0-ubuntu.deb",
+          "size": 262119360,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-1.0.0-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v1.0.0/MEDomicsLab-1.0.0-win.exe",
+          "size": 321894752,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v0.0.5-prealpha",
+      "name": "MEDomicsLab-0.0.5-prealpha",
+      "date": "2024-03-19T20:21:48Z",
+      "prerelease": false,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v0.0.5-prealpha",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-0.0.5-prealpha-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.5-prealpha/MEDomicsLab-0.0.5-prealpha-mac.dmg",
+          "size": 450375122,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-0.0.5-prealpha-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.5-prealpha/MEDomicsLab-0.0.5-prealpha-ubuntu.deb",
+          "size": 244552424,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-0.0.5-prealpha-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.5-prealpha/MEDomicsLab-0.0.5-prealpha-win.exe",
+          "size": 296413321,
+          "os": "windows"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-linux.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.5-prealpha/MEDomicsLab-PythonEnv-linux.zip",
+          "size": 4211,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.5-prealpha/MEDomicsLab-PythonEnv-mac.zip",
+          "size": 4999,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-win.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.5-prealpha/MEDomicsLab-PythonEnv-win.zip",
+          "size": 4725,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v0.0.4-prealpha",
+      "name": "MEDomicsLab-0.0.4-prealpha",
+      "date": "2024-02-22T14:28:09Z",
+      "prerelease": true,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v0.0.4-prealpha",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-0.0.4-prealpha-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.4-prealpha/MEDomicsLab-0.0.4-prealpha-mac.dmg",
+          "size": 445027057,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-0.0.4-prealpha-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.4-prealpha/MEDomicsLab-0.0.4-prealpha-ubuntu.deb",
+          "size": 239744454,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-0.0.4-prealpha-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.4-prealpha/MEDomicsLab-0.0.4-prealpha-win.exe",
+          "size": 292761927,
+          "os": "windows"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-linux.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.4-prealpha/MEDomicsLab-PythonEnv-linux.zip",
+          "size": 4211,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.4-prealpha/MEDomicsLab-PythonEnv-mac.zip",
+          "size": 4999,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-win.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.4-prealpha/MEDomicsLab-PythonEnv-win.zip",
+          "size": 4725,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v0.0.3-prealpha",
+      "name": "MEDomicsLab-0.0.3-prealpha",
+      "date": "2024-01-25T19:40:30Z",
+      "prerelease": true,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v0.0.3-prealpha",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-0.0.3-prealpha-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.3-prealpha/MEDomicsLab-0.0.3-prealpha-mac.dmg",
+          "size": 444723023,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-0.0.3-prealpha-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.3-prealpha/MEDomicsLab-0.0.3-prealpha-ubuntu.deb",
+          "size": 240686582,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-0.0.3-prealpha-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.3-prealpha/MEDomicsLab-0.0.3-prealpha-win.exe",
+          "size": 293598029,
+          "os": "windows"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-linux.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.3-prealpha/MEDomicsLab-PythonEnv-linux.zip",
+          "size": 4211,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.3-prealpha/MEDomicsLab-PythonEnv-mac.zip",
+          "size": 4999,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-win.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.3-prealpha/MEDomicsLab-PythonEnv-win.zip",
+          "size": 4725,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v0.0.2-prealpha",
+      "name": "MEDomicsLab-0.0.2-prealpha",
+      "date": "2024-01-17T18:30:23Z",
+      "prerelease": true,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v0.0.2-prealpha",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-0.0.2-prealpha-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.2-prealpha/MEDomicsLab-0.0.2-prealpha-mac.dmg",
+          "size": 444797301,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-0.0.2-prealpha-ubuntu.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.2-prealpha/MEDomicsLab-0.0.2-prealpha-ubuntu.deb",
+          "size": 240711436,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-0.0.2-prealpha-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.2-prealpha/MEDomicsLab-0.0.2-prealpha-win.exe",
+          "size": 293487340,
+          "os": "windows"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-linux.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.2-prealpha/MEDomicsLab-PythonEnv-linux.zip",
+          "size": 4211,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.2-prealpha/MEDomicsLab-PythonEnv-mac.zip",
+          "size": 5680,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-win.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.2-prealpha/MEDomicsLab-PythonEnv-win.zip",
+          "size": 4725,
+          "os": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v0.0.1-prealpha",
+      "name": "MEDomicsLab-0.0.1-prealpha",
+      "date": "2024-01-10T20:22:09Z",
+      "prerelease": true,
+      "url": "https://github.com/MEDomicsLab/MEDomics/releases/tag/v0.0.1-prealpha",
+      "channel": "app",
+      "assets": [
+        {
+          "name": "MEDomicsLab-0.0.1-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.1-prealpha/MEDomicsLab-0.0.1-mac.dmg",
+          "size": 402143905,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-0.0.1-prealpha-linux.deb",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.1-prealpha/MEDomicsLab-0.0.1-prealpha-linux.deb",
+          "size": 240514768,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-0.0.1-prealpha-mac.dmg",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.1-prealpha/MEDomicsLab-0.0.1-prealpha-mac.dmg",
+          "size": 444714618,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-0.0.1-prealpha-win.exe",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.1-prealpha/MEDomicsLab-0.0.1-prealpha-win.exe",
+          "size": 293368592,
+          "os": "windows"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-linux.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.1-prealpha/MEDomicsLab-PythonEnv-linux.zip",
+          "size": 4211,
+          "os": "linux"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-mac.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.1-prealpha/MEDomicsLab-PythonEnv-mac.zip",
+          "size": 4901,
+          "os": "mac"
+        },
+        {
+          "name": "MEDomicsLab-PythonEnv-win.zip",
+          "url": "https://github.com/MEDomicsLab/MEDomics/releases/download/v0.0.1-prealpha/MEDomicsLab-PythonEnv-win.zip",
+          "size": 4725,
+          "os": "windows"
+        }
+      ]
+    }
+  ]
+}
